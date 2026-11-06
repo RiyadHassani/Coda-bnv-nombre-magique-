@@ -7,7 +7,7 @@ int main()
 	srand(time(NULL));
 	int random_number = rand() % 100 + 1;
 	int guess;
-	int vie=3;
+	int vie=10;
 	while(guess!=random_number)
 	{
 		printf("Choisis un nombre que j'ai pick aléatoirement, %d essais restants :\n", vie);
@@ -17,7 +17,7 @@ int main()
 			printf("Bravo ! Tu as trouvé le nombre avec encore %d vie restantes ! :\n", vie);
 			return(0);
 		}
-		else if(vie==0)
+		else if(vie==1)
 		{
 			printf("Dommage, il ne te reste plus de tentative, le nombre était %d :\n", random_number);
 			return(0);
@@ -26,12 +26,14 @@ int main()
 		{
 			if(guess<random_number)
 			{
-				printf("Mauvaise réponse, le nombre doit etre plus grand,  %d vies restante :\n", vie);
+				printf("Le nombre doit etre plus grand \n");
 				vie=vie-1;
 			}
 			else
 			{
-				printf("Mauvaise réponse, le nombre doit etre plus petit,  %d vies restante :\n", vie);
+				printf("Le nombre doit etre plus petit\n");
 				vie=vie-1;
 			}
+		}
+	}
 }
